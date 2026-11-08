@@ -1,0 +1,171 @@
+/* ---------- Colours ---------- */
+:root {
+  --primary: #4f46e5;
+  --primary-2: #7c3aed;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --border: #d4d8e1;
+  --success: #067647;
+  --success-bg: #ecfdf3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ---------- Page: card is centered on screen ---------- */
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+  background: linear-gradient(135deg, #e0e7ff, #f3e8ff);
+  color: var(--text);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- Card ---------- */
+.card {
+  width: 100%;
+  max-width: 560px;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  text-align: center;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 8px 6px;
+  vertical-align: top;
+}
+
+.label-cell {
+  width: 28%;
+  padding-top: 20px;   
+  white-space: nowrap;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* ---------- Inputs ---------- */
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 11px 12px;
+  font: inherit;
+  color: inherit;
+  background: white;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px;
+}
+
+.invalid:focus {
+  box-shadow: 0 0 0 3px;
+}
+
+.message {
+  margin: 6px 0 0;
+  min-height: 1.1em;
+  font-size: 0.82rem;
+}
+
+.counter {
+  margin: 2px 0 0;
+  text-align: right;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+
+/* ---------- Submit button (coloured) ---------- */
+button {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(79, 70, 229, 0.45);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.message.success {
+  margin-top: 18px;
+  padding: 12px 14px;
+  font-size: 0.92rem;
+  text-align: center;
+  color: var(--success);
+  background: var(--success-bg);
+  border: 1px solid #abefc6;
+  border-radius: 8px;
+}
+
+/* ---------- Small screens: label above input ---------- */
+@media (max-width: 520px) {
+  .card {
+    padding: 22px;
+  }
+
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  .label-cell {
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 0;
+  }
+}
