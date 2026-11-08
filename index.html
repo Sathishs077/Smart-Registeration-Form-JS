@@ -1,118 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Details Task</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Registration Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <main class="card">
+    <h1>Create your account</h1>
+    <p class="subtitle">All fields are required.</p>
 
-    <style>
-        body {
-            padding: 10px;
-        }
+    <form id="registrationForm" novalidate>
+      <table>
 
-        th {
-            border: solid black 1px;
-            padding: 5px;
-        }
+        <!-- Name -->
+        <tr>
+          <td class="label-cell"><label for="name">Name:</label></td>
+          <td>
+            <input type="text" id="name" name="name" placeholder="Enter Your Name" autocomplete="name">
+            <p class="message error" id="nameError" role="alert"></p>
+          </td>
+        </tr>
 
-        #studentForm {
-            border: solid black 1px;
-            width: 300px;
-            padding: 10px;
-        }
+        <!-- Email -->
+        <tr>
+          <td class="label-cell"><label for="email">Email:</label></td>
+          <td>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" autocomplete="email">
+            <p class="message error" id="emailError" role="alert"></p>
+          </td>
+        </tr>
 
-        #btn {
-            width: 100px;
-            background-color: aqua;
-        }
+        <!-- Password -->
+        <tr>
+          <td class="label-cell"><label for="password">Password:</label></td>
+          <td>
+            <input type="password" id="password" name="password" placeholder="At least 6 characters" autocomplete="new-password">
+            <p class="message error" id="passwordError" role="alert"></p>
+          </td>
+        </tr>
 
-        #studentTable {
-            margin-top: 10px;
-            border-collapse: collapse;
-        }
+        <!-- Bio -->
+        <tr>
+          <td class="label-cell"><label for="bio">Bio:</label></td>
+          <td>
+            <textarea id="bio" name="bio" rows="4" maxlength="200" placeholder="Tell us a little about yourself"></textarea>
+            <p class="message error" id="bioError" role="alert"></p>
+            <p class="counter" id="bioCounter" aria-live="polite">0 / 200 characters</p>
+          </td>
+        </tr>
 
-        #studentTable th,
-        #studentTable td {
-            border: 1px solid black;
-            /* Ella cells-kum black border */
-            padding: 8px 12px;
-            text-align: center;
-        }
-    </style>
+        <!-- Submit button -->
+        <tr>
+          <td colspan="2">
+            <button type="submit" id="submitBtn" disabled>Submit</button>
+          </td>
+        </tr>
 
-    <h2>STUDENT DETAILS TASK</h2>
-
-    <!-- Student Form using tr and td -->
-    <form id="studentForm">
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="2">STUDENT FORM</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><label for="name">Name:</label></td>
-                    <td><input type="text" id="name" required></td>
-                </tr>
-                <tr>
-                    <td><label for="age">Age:</label></td>
-                    <td><input type="number" id="age" required></td>
-                </tr>
-                <tr>
-                    <td><label>Gender:</label></td>
-                    <td>
-                        <input type="radio" name="gender" value="Male" required> Male
-                        <input type="radio" name="gender" value="Female"> Female
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="course">Course:</label></td>
-                    <td>
-                        <select id="course" required>
-                            <option value="" disabled selected>Select Course</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="Python">Python</option>
-                            <option value="Java">Java</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td><label for="email">E-mail:</label></td>
-                    <td><input type="email" id="email" required></td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <button type="submit" id="btn">Save:</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      </table>
     </form>
 
-    <!-- Student Details Table -->
-    <table id="studentTable">
-        <thead>
-            <tr>
-                <th>NAME</th>
-                <th>AGE</th>
-                <th>COURSE</th>
-                <th>GENDER</th>
-                <th>EMAIL</th>
-                <th>ACTION</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Rows will be added here -->
-        </tbody>
-    </table>
+    <p class="message success" id="successMessage" role="status" hidden></p>
+  </main>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
